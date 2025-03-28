@@ -1,4 +1,5 @@
 from os import system
+import random
 
 test_board = ['#','X','O','X','O','X','O','X','O','X']
 
@@ -23,4 +24,12 @@ def place_marker(board, marker, position):
     board[position] = marker
 
 def win_check(board, mark):
-    pass
+    return (board[7] == mark and board[8] == mark and board[9] == mark) or (board[4] == mark and board[5] == mark and board[6] == mark) or (board[1] == mark and board[2] == mark and board[3] == mark) or (board[7] == mark and board[4] == mark and board[1] == mark) or (board[8] == mark and board[5] == mark and board[2] == mark) or (board[9] == mark and board[6] == mark and board[3] == mark) or (board[7] == mark and board[5] == mark and board[3] == mark) or (board[9] == mark and board[5] == mark and board[1] == mark)
+
+def choose_first():
+    turn = random.randint(1,2)
+    if turn == 1:
+        return "Player 1"
+    else:
+        return "Player 2"
+print(choose_first())
